@@ -38,7 +38,7 @@ DEBUG_SET_LEVEL(DEBUG_LEVEL_INFO);
 
 int main(int argc, char **argv)
 {
-	int width = 32, count = 1, i;
+	int width = 32, count = 1, i, ret = 0;
 	unsigned long addr;
 	unsigned char buf[MAX_BUF_SIZE];
 
@@ -98,8 +98,7 @@ int main(int argc, char **argv)
 
 	default:
 		ERR("width(%d) invalid\n", width);
-		free(buf);
-		return -1;
+		ret = -1;
 	}
 	free(buf);
 
