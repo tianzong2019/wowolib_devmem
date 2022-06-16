@@ -35,8 +35,6 @@
  */
 DEBUG_SET_LEVEL(DEBUG_LEVEL_INFO);
 
-/* max buffer size in byte */
-#define MAX_BUF_SIZE		4096
 
 int main(int argc, char **argv)
 {
@@ -62,11 +60,7 @@ int main(int argc, char **argv)
 		count = strtoul(argv[3], 0, 0);
 	}
 
-	if (width * count > MAX_BUF_SIZE) {
-		ERR("width * count(%d) should little than %d\n",
-			width * count, MAX_BUF_SIZE);
-		return -1;
-	}
+	buf = malloc(width * count);
 
 	DEBUG("addr 0x%lx, width %c, count %d\n", addr, width, count);
 
@@ -104,9 +98,10 @@ int main(int argc, char **argv)
 
 	default:
 		ERR("width(%d) invalid\n", width);
+		free(buf);
 		return -1;
 	}
-
+	free(buf);
 
 	return 0;
 }
