@@ -14,8 +14,9 @@
 #
 
 #CC      = /opt/arm-2012.03/bin/arm-none-linux-gnueabi-gcc
-CC      = /opt/gcc-linaro-aarch64-linux-gnu-4.8-2013.12_linux/bin/aarch64-linux-gnu-gcc
+#CC      = /opt/gcc-linaro-aarch64-linux-gnu-4.8-2013.12_linux/bin/aarch64-linux-gnu-gcc
 #CC      = gcc
+CC      = aarch64-linux-gnu-gcc
 
 CFLAGS  = -Wall -O3 -static
 INCFLAGS=
