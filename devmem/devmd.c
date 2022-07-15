@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 {
 	int width = 32, count = 1, i, ret = 0;
 	unsigned long addr;
-	unsigned char buf[MAX_BUF_SIZE];
+	char *buf;
 
 	if (argc < 2) {
 		ERR("\nUsage:\t%s { address } [type] [count]\n"
@@ -102,5 +102,5 @@ int main(int argc, char **argv)
 	}
 	free(buf);
 
-	return 0;
+	return ret;
 }
